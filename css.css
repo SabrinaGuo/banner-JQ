@@ -1,0 +1,91 @@
+.banner {
+  width: 1200px;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+}
+
+.banner.transition {
+  -webkit-transition: .75s;
+  transition: .75s;
+}
+
+.banner.opening, .banner.opened {
+  height: 300px;
+}
+
+.banner.opening .img, .banner.opened .img {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+.banner.closing {
+  height: 80px;
+}
+
+.banner.closed {
+  height: 80px;
+}
+
+.banner.closed .img {
+  position: absolute;
+  display: block;
+  top: -300px;
+}
+
+.banner.closed > .btn:hover {
+  color: #fff;
+}
+
+.banner.closed > .btn:hover::after {
+  border-color: #fff transparent transparent transparent;
+}
+
+.banner.closed > .btn::after {
+  content: '';
+  display: inline-block;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #a3a3a3  transparent transparent transparent;
+}
+
+.banner > .wrap {
+  max-width: 1200px;
+  display: block;
+  height: 100%;
+}
+
+.banner .btn {
+  position: absolute;
+  padding: 2px 2px 2px 8px;
+  bottom: 0;
+  right: 0;
+  border-radius: 5px 0 0 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 23px;
+  background: #000;
+  color: #a3a3a3;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.banner .btn:hover {
+  color: #fff;
+}
+
+.banner .btn:hover::after {
+  border-color: transparent transparent #fff transparent;
+}
+
+.banner .btn::after {
+  content: '';
+  display: inline-block;
+  margin: 2px;
+  border-style: solid;
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #a3a3a3 transparent;
+}
+/*# sourceMappingURL=css.css.map */
