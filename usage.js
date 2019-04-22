@@ -73,13 +73,10 @@
             // console.log(this)
         }
     }
-    Module.prototype.clearIntervalTiming = function () {
+    Module.prototype.clearIntervalTime = function () {
         clearInterval(this.time);
     }
 
-    Module.prototype.clearSettiming = function () {
-        clearTimeout(this.settime);
-    }
 
 
     //設定個別動作
@@ -145,17 +142,17 @@
 
     };
     Module.prototype.open = function () {
-        this.setInterval();
+        this.setInterval(); //啟動whenTransition
         this.$ele.removeClass(this.StatusClass(this.status)).addClass(this.StatusClass(this.NextStatus()));
         this.$btn.text(this.option.button.closeText);
-        this.clearSettiming();
+        this.clearSettime();
 
     }
     Module.prototype.close = function () {
         this.setInterval();
         this.$ele.removeClass(this.StatusClass(this.status)).addClass(this.StatusClass(this.NextStatus()));
         this.$btn.text(this.option.button.openText);
-        this.clearSettiming();
+        this.clearSettime();
 
     }
     Module.prototype.toggle = function () {
@@ -187,7 +184,7 @@
         } else if (this.status === 3) {
             this.$ele.removeClass(this.StatusClass(this.status)).addClass(this.StatusClass(this.NextStatus()));
         }
-        this.clearIntervalTiming();
+        this.clearIntervalTime(); //停止whentransition
     }
 
     // jQuery.fn = jQuery.prototype / []代表ModuleName是可以改變而不會寫死
