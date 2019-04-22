@@ -77,6 +77,9 @@
         clearInterval(this.time);
     }
 
+    Module.prototype.clearSettime = function () {
+        clearTimeout(this.settime);
+    }
 
 
     //設定個別動作
